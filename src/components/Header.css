@@ -1,0 +1,41 @@
+/* Header.css */
+nav {
+    background-color: #1a1a1a; /* Dark background for header */
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 2rem; /* Spacing between menu items */
+}
+
+li {
+    margin: 0;
+}
+
+a {
+    color: #ffffff; /* White text color */
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+a:hover {
+    color: #4caf50; /* Green accent on hover */
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}

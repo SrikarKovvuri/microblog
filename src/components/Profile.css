@@ -1,0 +1,167 @@
+/* Profile.css */
+
+/* Overall page container with a gradient background */
+.profile-page {
+    min-height: 100vh;
+    width: 100vw;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', sans-serif; /* Example modern font */
+  }
+  
+  /* Glassy container for profile details */
+  .profile-container {
+    width: 600px;
+    max-width: 90%;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    padding: 2rem;
+    animation: fadeInUp 0.6s ease;
+  }
+  
+  /* Subtle fade-and-slide animation */
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(60px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Header styling */
+  .profile-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .profile-header h2 {
+    margin: 0;
+    font-size: 1.75rem;
+    color: #333;
+  }
+  
+  /* Profile info group, e.g. username, bio, location */
+  .info-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Titles for each section: "Username", "Bio", etc. */
+  .info-title {
+    margin: 0 0 0.5rem 0;
+    font-weight: 600;
+    color: #444;
+    font-size: 1.1rem;
+  }
+  
+  /* Fields for editing (e.g., text inputs) */
+  .info-input {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 0.75rem;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    transition: border-color 0.2s ease;
+  }
+  
+  .info-input:focus {
+    border-color: #f5576c;
+    outline: none;
+  }
+  
+  /* Buttons grouped inline for editing/canceling */
+  .button-group {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .edit-button,
+  .delete-button,
+  .save-button,
+  .cancel-button {
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+  
+  .edit-button {
+    background-color: #74b9ff;
+    color: #fff;
+  }
+  
+  .edit-button:hover {
+    background-color: #4aa3ff;
+    transform: translateY(-2px);
+  }
+  
+  .save-button {
+    background-color: #6c5ce7;
+    color: #fff;
+  }
+  
+  .save-button:hover {
+    background-color: #5b4dd6;
+    transform: translateY(-2px);
+  }
+  
+  .cancel-button {
+    background-color: #dfe6e9;
+    color: #2d3436;
+  }
+  
+  .cancel-button:hover {
+    background-color: #cfd6d9;
+    transform: translateY(-2px);
+  }
+  
+  .delete-button {
+    background-color: #e17055;
+    color: #fff;
+    margin-top: 1rem; /* spacing above */
+  }
+  
+  .delete-button:hover {
+    background-color: #d65c43;
+    transform: translateY(-2px);
+  }
+  
+  /* Posts and comments section */
+  .posts-section,
+  .comments-section {
+    margin-top: 2rem;
+  }
+  
+  .post-card {
+    background: #fff;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Responsive design */
+  @media (max-width: 480px) {
+    .profile-container {
+      padding: 1.5rem;
+    }
+    .info-input {
+      font-size: 0.9rem;
+    }
+    .edit-button,
+    .delete-button,
+    .save-button,
+    .cancel-button {
+      font-size: 0.9rem;
+    }
+  }
+  
