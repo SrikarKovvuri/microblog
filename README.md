@@ -1,70 +1,106 @@
-# Getting Started with Create React App
+# Microblog Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Microblog is a full-stack CRUD application built using React, Flask, and PostgreSQL. This project implements user authentication, role-based access (admin functionality), and basic blogging features, including posts and comments.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+### Core Functionality
+- **User Authentication:** Secure login and signup functionality using JWT for session management.
+- **Role-Based Access Control:** Admin users can perform privileged actions such as deleting any post or comment.
+- **Posts Management:** Users can create, edit, and delete their own posts.
+- **Comments Management:** Users can add comments to posts, edit their own comments, and delete them.
+- **Dynamic Dashboard:** Displays posts and comments dynamically, allowing real-time updates for seamless interaction.
+- **Profile Page:** Displays each users username, bio, and location, all which are able to be updated. It also displays the users past posts and comments
 
-### `npm start`
+### Additional Features
+- **Environment Configuration:** Sensitive information such as database credentials and secret keys are stored in environment variables for security.
+- **Responsive Design:** Fully styled frontend with responsive elements for a smooth user experience.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Tech Stack
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Frontend
+- **React**: For building the user interface.
+- **Axios**: For API communication.
+- **CSS**: For styling components and pages.
 
-### `npm test`
+### Backend
+- **Flask**: Python-based framework for server-side logic and API endpoints.
+- **Flask-SQLAlchemy**: ORM for managing database operations.
+- **Flask-JWT-Extended**: For handling authentication and token-based authorization.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Database
+- **PostgreSQL**: A robust relational database for storing user information, posts, and comments.
 
-### `npm run build`
+## Setup and Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
+Ensure you have the following installed:
+- Python (>= 3.8)
+- Node.js (>= 14.x)
+- PostgreSQL
+- Git
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Backend Setup
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/SrikarKovvuri/microblog.git
+   cd microblog
+   ```
+2. Set up a virtual environment:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+4. Set up environment variables in a `.env` file:
+   ```env
+   DATABASE_URL=postgresql://<username>:<password>@localhost:5432/microblog
+   SECRET_KEY=<your_secret_key>
+   ```
+5. Initialize the database:
+   ```bash
+   flask db init
+   flask db migrate -m "Initial migration."
+   flask db upgrade
+   ```
+6. Start the backend server:
+   ```bash
+   flask run
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Frontend Setup
+1. Navigate to the `src` directory:
+   ```bash
+   cd src
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm start
+   ```
 
-### `npm run eject`
+### Running the Application
+1. Start both the backend and frontend servers.
+2. Open your browser and navigate to `http://localhost:3000` to access the application.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Future Improvements
+- Implement real-time updates using WebSockets for enhanced interactivity.
+- Add unit and integration tests for both frontend and backend.
+- Include OAuth-based authentication (e.g., Google, GitHub).
+- Extend the admin functionality with detailed analytics and user management.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Contributing
+Feel free to fork this repository, make changes, and submit pull requests. Contributions are welcome!
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## License
+This project is licensed under the [MIT License](LICENSE).
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+Developed by [Srikar Kovvuri](https://github.com/SrikarKovvuri).
